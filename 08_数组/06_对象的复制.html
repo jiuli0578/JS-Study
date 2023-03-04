@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = ['孙悟空','猪八戒','沙和尚','唐僧']
+
+        const arr1 = arr //不是复制
+        arr1[1] = '小白龙' //arr1 和 arr 都会改变
+
+        console.log(arr); //['孙悟空', '小白龙', '沙和尚', '唐僧']
+        console.log(arr1); //['孙悟空', '小白龙', '沙和尚', '唐僧']
+
+        //如何去复制一个对象，复制必须要产生新的对象
+        //当调用slice()时，会产生一个新的数组对象，从而完成对数组的复制
+        const arr3 = arr.slice()
+        arr3[1] = '猪八戒'
+
+        console.log(arr); //['孙悟空', '小白龙', '沙和尚', '唐僧']
+        console.log(arr3); //['孙悟空', '猪八戒', '沙和尚', '唐僧']
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

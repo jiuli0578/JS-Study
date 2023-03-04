@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /*
+            ! 逻辑非
+                - ! 可以用来对一个值进行非运算 
+                - 它可以对一个布尔值进行取反操作
+                    true ==> false
+                    false ==> true
+                -如果对一个非布尔值进行取反，它会先将其转换为布尔值再取反
+                    可以利用这一特点将其他类型转换为布尔值
+                
+                -类型转换
+                    转换为字符串：
+                        显式转换：String()
+                        隐式转换：+ ''
+                    转换为数值：
+                        显式转换：Number()
+                        隐式转换：+
+                    转换为布尔值：
+                        显式转换：Boolean()
+                        隐式转换：!!
+         */
+        let a = 123
+        a = !!a // true
+        console.log(a);
+        /* 
+            && 逻辑与
+                - 可以对两个值进行与运算
+                - 当 && 左右都为 true 时，则返回 true ，否则返回 false
+                - 与运算时短路的与，如果第一个值时 false ，则不看第二个值
+                - 与运算是找 false 的，如果找到 false 则直接返回，没有 false 才返回 true
+                - 对于非布尔值进行与运算，它会先转换为布尔值再进行运算
+                    但最终会返回原值
+                        - 如果第一个值为 false ，则直接返回第一个值
+                            如果第一个值为 true ，则返回第二个值
+         */
+        let result = 1 && 2 //2
+        //        true && true ==> true
+        result = 1 && 0 //0
+        //   true && false ==> false
+        result = 0 && NaN //0
+        //   false && false ==> false
+        /*
+            || 逻辑或
+                - 可以对两个值进行或运算
+                - 当 || 左右有 true 时，则返回 true ，否则返回 false
+                - 或运算时短路的或，如果第一个值时 true ，则不看第二个值
+                - 或运算是找 true 的，如果找到 true 则直接返回，没有 true 才返回 false
+                - 对于非布尔值进行或运算，它会先转换为布尔值再进行运算
+                    但最终会返回原值
+                        - 如果第一个值为 true ，则直接返回第一个值
+                            如果第一个值为 false ，则返回第二个值
+         */
+        result = 1 || 2 //1
+        //    true || true ==> true
+        result = 1 || 0 //1
+        //    true || false ==> true
+        result = 0 || NaN // NaN
+        //   false || false ==> fasle
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

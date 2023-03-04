@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const map = new Map()
+
+        map.set('name','孙悟空')
+        map.set('age','18')
+        map.set({},'哈哈哈')
+
+        //将map转换为数组
+        const arr = Array.from(map) //等价于 const arr = [...map]
+        console.log(arr); //['name', '孙悟空'],['age', '18'],[{…}, '哈哈哈']
+
+        const arr1 = new Map([
+            ['name', '猪八戒'],
+            ['age', '28'],
+            [{}, () => {}]
+        ])
+        console.log(arr1); //Map(3) {'name' => '猪八戒', 'age' => '28', {…} => ƒ}
+
+        //遍历map
+        for(const [key,value] of map){
+            console.log(key,value);//name 孙悟空 age 18 {} '哈哈哈'
+        }
+        map.forEach((key,value) =>{
+            console.log(key,value); //孙悟空 name 18 age 哈哈哈 {}
+        })
+        
+        /* 
+            map.keys() -获取map的所以key
+            map.values() -获取map的所有value
+        */
+        for(const key of map.keys()){
+            console.log(key); //name age {}
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

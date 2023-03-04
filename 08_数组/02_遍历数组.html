@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //任意类型的值都可以成为数组中的元素
+        let arr = [1,'Hello',true,{name:'孙悟空'}]
+
+        //创建数组时尽量要确保数组中存储的数据类型是相同的
+        arr = ['猪八戒','唐僧','沙和尚']
+        // console.log(arr);
+        /* 
+            遍历数组
+                -遍历数组简单理解，就是获取到数组中每一个元素
+        */
+
+        //正序
+        for(let i = 0;i < arr.length;i++){
+            console.log(arr[i]);
+        }
+
+        //倒序
+        for(let i = arr.length - 1;i >=0;i--){
+            console.log(arr[i]);
+        }
+
+        /* 
+            定义一个Person类，类中有两个属性name和age
+                然后创建几个Person对象，将其添加到数组中
+
+            遍历数组，并打印未成年人的信息
+        */
+        class Person{
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+        }
+        const PersonArr = [{name:'孙悟空',age:18},{name:'沙和尚',age:38},{name:'红孩儿',age:8}]
+        for(let i = 0; i < PersonArr.length; i++){
+            if(PersonArr[i].age < 18)
+                console.log(PersonArr[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

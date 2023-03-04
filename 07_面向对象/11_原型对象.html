@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{
+            name = '孙悟空'
+            age = 18
+
+            sayHello(){
+                console.log('Hello,'+this.name);
+            }
+        }
+
+        const p1 = new Person()
+        console.log(p1);
+        /* 
+            访问一个对象的原型对象
+                对象.__proto__
+                Object.getPrototypeOf(对象)
+
+            原型对象中的数据：
+                1.对象中的数据（属性、方法等）
+                2.constructor（对象的构造函数）
+
+            注意：
+                原型对象也有原型，这样就构成了一条原型链，根据对象的复杂程度不同，原型链的长度也不同
+                p对象的原型链：p对象 ==> 原型 ==> 原型 ==> null
+                obj对象的原型链：obj对象 ==> 原型 ==> null
+
+                原型链：
+                    -读取对象属性时，会优先读取自身属性，
+                        如果对象中有，则使用，没有则去对象的原型中寻找
+                        如果原型中有，则使用，没有则去原型的原型中寻找
+                        直到找到Object对象的原型（Object对象的原型没有原型（为null））
+                            如果依然没有找到，则返回undefined
+
+                作用域链是找变量的链，找不到会报错
+                原型链是找属性的链，找不到会返回undefined
+                
+        */
+        // console.log(p1.__proto__);
+        // console.log(p1.__proto__.__proto__.__proto__);
+        const obj = {}
+        console.log(p1.__proto__.__proto__ === obj.__proto__);//true
+        console.log(Object.getPrototypeOf(p1));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

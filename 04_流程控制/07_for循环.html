@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环</title>
+    <script>
+        /* 
+            for循环
+                -for循环和while循环没有本质区别,都是用来反复执行代码
+                -不同点就是语法结构,for循环更加清晰
+                -语法:
+                    for(①初始化表达式;②条件表达式;④更新表达式){
+                        ③语句..
+
+                    }
+                    
+                -执行流程:
+                ①执行初始化表达式,初始化变量
+                ②执行条件表达式,判断循环是否执行(true执行,false终止)
+                ③判断结果为 true ,则执行循环体
+                ④执行更新表达式,对初始化变量进行修改
+                ⑤重复②,直到判断为 false 为止
+
+            -初始化表达式在循环的生命周期中只执行一次
+            -for循环中的三个表达式都可以省略
+            -使用let在for循环中声明的变量是局部变量,只能在for循环内部访问
+                    使用var在for循环中声明的变量可以在for循环的外部访问
+            -创建死循环的方式:
+                    while(1){}
+                    for(;;){}
+        */
+        //练习  求100以内三的倍数的个数和它们的和
+        /* let n = 0
+        let num = 0
+        for(let i=1; i <= 100; i++){
+            if(i % 3 === 0){
+                n++
+                num += i
+            }
+        }
+        console.log(n,num); */
+        //  练习    求1000以内的水仙花数
+        /* for(let i = 100; i < 1000; i++){
+            //不是整除,用parseInt()函数取整
+            let a = parseInt(i / 100) 
+            let b = parseInt((i % 100) / 10)
+            let c = i % 10
+            let num = a ** 3 + b ** 3 + c ** 3
+            if( num === i){
+                console.log(i);
+            }
+        } */
+        //  练习    获取用户输入的大于一的数,判断是否为质数
+        let num = +prompt('请输入大于一的数:')
+        let a = true
+
+        for(let i = 2; i < num; i++){
+            if(num % i === 0){
+                a = false
+            }
+        }
+        if(a){
+            alert(`${num}是质数`);
+        }else{
+            alert(`${num}不是质数`);
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            一对兔子出生后的两个月后每个月都能生一对兔子
+                -编写一个函数，可以用来计算第n个月的兔子的数量
+            
+            月份:   1   2   3   4   5   6   7   8   9
+                    1   1   2   3   5   8   13  21  34..
+                //规律：当前数等于前两个数之和（斐波那契数列）
+        */
+        function fn(n){ 
+            //确定基线条件
+            if(n < 3){
+                return 1
+            }
+            //设置递归条件
+            //第n个数 = 第(n-1)个数 + 第(n-2)个数
+            return fn(n - 1) + fn(n - 2)
+        }
+
+        console.log(fn(10));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

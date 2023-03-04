@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const obj = {
+            name:'孙悟空',
+            age:18,
+            friend:{
+                name:'猪八戒',
+                age:28
+            }
+        }
+
+        //对obj进行浅拷贝
+        const obj1 = Object.assign({},obj)
+
+        //对obj进行深拷贝
+        const obj2 = structuredClone(obj)
+
+        //利用JSON来完成深拷贝
+        const obj3 = JSON.parse(JSON.stringify(obj))
+        /* 
+            等价于：
+            const str = JSON.stringify(obj)
+            cosnt obj3 = JSON.parse(str)
+        */
+        console.log(obj1.friend === obj.friend); //true
+        console.log(obj2.friend === obj.friend); //false
+        console.log(obj3.friend === obj.friend); //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

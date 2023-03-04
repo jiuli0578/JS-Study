@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{
+
+        }
+        const personArr = [
+            {name:'孙悟空',age:18},
+            {name:'沙和尚',age:38},
+            {name:'猪八戒',age:16},
+            {name:'红孩儿',age:8}
+        ]
+        /* 
+            高阶函数
+                -如果一个函数的参数或者返回值是函数，则称这个函数为高阶函数
+                -为什么要将函数作为参数传递？（回调函数有什么用）
+                    -将函数作为参数，意味着可以对另一个函数动态传递代码
+        */
+        
+        function filter(arr,callbake){
+            const newArr = []
+            for(let i = 0; i < arr.length; i++){
+                if(callbake(arr[i])){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+
+        result = filter(personArr, a => a.age < 18)
+        result = filter(personArr,a => a.name === '孙悟空')
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
