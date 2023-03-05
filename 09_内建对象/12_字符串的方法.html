@@ -6,7 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        /* 
+            字符串：
+                -字符串本质上就是一个字符数组
+                -"Hello" ==> ["H","e","l","l","o"]
+                -字符串的很多方法都和数组是非常相似的
+                -属性和方法：
+                    length 获取字符串长度
+                    字符串[索引] 获取指定位置的字符
+                    str.at()（实验方法）
+                        -根据索引获取字符，可以接受负索引
+                    str.charAt()
+                        -根据索引获取字符
+                    str.concat()
+                        -用来连接两个或多个字符串
+        */              
+        let str = 'Hello'
+        let result = str.length //5
+        result = str.at(1)  //e
+        result = str.at(-1) //o
+        result = str.charAt(1) //e
+        result = str.concat('World') //HelloWorld
+        /* 
+                    str.includes()
+                        -用来检查字符串中是否包含某个内容
+                            有返回true
+                            没有返回false
+                        -第一个参数为要查询的内容，第二个参数为查询的起始位置
+                    str.indexOf()
+                    str.lastIndexOf()
+                        -查询字符串中是否包含某个内容
+                            有则返回索引
+                            没有返回-1
+                        -第一个参数为要查询的内容，第二个参数为查询的起始位置
+        */  
+        str = 'Hello how are you Hello'         
+        result = str.includes('Hello') //true
+        result = str.indexOf('Hello',8)  //18
+        result = str.lastIndexOf('Hello') //18
+
+        /* 
+                    str.startsWith()
+                        -检查一个字符串是否以指定内容开头
+                    str.endsWith()
+                        -检查一个字符串是否以指定内容结尾
+        */            
+        result = str.startsWith('Hello')    //true
+        result = str.endsWith('Hello')      //true
+
+        /* 
+                    str.padStart()
+                        -通过添加指定内容，使字符串保持某个长度，在字符串前面添加
+                        -第一个参数为要保持的长度，第二个参数为添加的内容
+                    str.padEnd()
+                        -通过添加指定内容，使字符串保持某个长度，在字符串末尾添加
+                        -第一个参数为要保持的长度，第二个参数为添加的内容
+        */
+        str = 'abc'
+        result = str.padStart(7,'*')    //****abc
+        result = str.padEnd(7,'+')      //abc++++
         
+        /* 
+                    str.replace()
+                        -使用一个新字符串替换一个指定内容
+                        -第一个参数为要替换的字符串，第二个为要替换的内容
+                    str.replaceAll()
+                        -使用一个新字符串替换所有指定内容
+        */
+        str = 'abc def ghi abc'
+        result = str.replace('abc','hhh')   //hhh def ghi abc
+        result = str.replaceAll('abc','hhh')    //hhh def ghi hhh
+
+        /* 
+                    str.slice()
+                        -对字符串进行切片
+                        -第一个参数为起始位置，第二个为结束位置
+                    str.substring()
+                        -截取字符串
+                        -第一个参数为起始位置，第二个为结束位置，
+                        两者区别在于substring会自动将大的数作为结束位置
+                    str.split()
+                        -用来将一个字符串拆分成一个数组
+                            以参数为拆分点，拆分后参数字符删除
+                    str.toLowerCase()
+                        -将字符串转换成小写
+                    str.toUpperCase()
+                        -将字符串转换成大写
+        */
+        str = 'abc@def@GHI@jkl'
+        result = str.slice(5,9) //ef@G
+        result = str.substring(9,5) //ef@G
+        result = str.split('@') //['abc', 'def', 'GHI', 'jkl']
+        result = str.toLowerCase()  //abc@def@ghi@jkl
+        result = str.toUpperCase()  //ABC@DEF@GHI@JKL
+
+        /* 
+                    str.trim()
+                        -去除前后空格
+                    str.trimStart()
+                        -去除开始空格
+                    str.trimEnd()
+                        -去除结尾空格
+        */
+        str = '   ab c   '
+        result = str.trim() //'ab c'
+        result = str.trimStart() //'ab c   '
+        result = str.trimEnd() //'   ab c'
+        console.log(result);
     </script>
 </head>
 <body>

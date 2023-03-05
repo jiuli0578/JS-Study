@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            split()
+                -可以根据正则表达式来对一个字符串进行拆分
+            search()
+                -可以去搜索符合正则表达式的内容第一次出现的索引
+            replace()
+                -根据正则表达式替换字符串中的指定内容
+                -第一个参数为正则表达式，第二个为要替换的内容
+            match()
+                -根据正则表达式去匹配字符串中符合要求的内容
+            matchAll()
+                -根据正则表达式去匹配字符串中符合要求的内容（必须设置g 全局匹配）
+                -它返回的是一个迭代器
+                    遇到迭代器直接for循环取出
+        */
+        let str = 'a@b@c@d'
+        let result = str.split('@') //['a', 'b', 'c', 'd']
+
+        str = '孙悟空abc猪八戒adc沙和尚'
+        let reg = /a[bd]c/
+        result = str.split(reg) //['孙悟空', '猪八戒', '沙和尚']
+        str = 'jdowijaod18720306880anjkdwnkl18720345214kjawnmfdnj15478514298fkemflk'
+        reg = /1[3-9]\d{9}/g
+        result = str.search(reg)    //9
+        result = str.replace(reg,'电话号码') //jdowijaod电话号码anjkdwnkl电话号码kjawnmfdnj电话号码fkemflk
+        result = str.match(reg)     //['18720306880', '18720345214', '15478514298']
+        result = str.matchAll(reg)  //RegExpStringIterator {}
+        for(let item of result){
+            console.log(item);
+        }
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
