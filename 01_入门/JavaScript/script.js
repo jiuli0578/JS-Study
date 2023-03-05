@@ -1,2 +1,1 @@
-const btn = document.getElementById('btn')
-alert(btn)
+alert('嘿嘿嘿')
