@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color:yellowgreen
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击读取</button>
+    <hr>
+    <div class="box1"></div>
+    <script>
+        //获取按钮
+        const btn = document.getElementById("btn")
+        //获取div
+        const box1 = document.querySelector(".box1")
+
+        //点击事件
+        btn.onclick = function(){
+            /* 
+                getComputedStyle()
+                    -它会返回一个一个对象，这个对象包含了当前元素所有的生效样式
+                    -参数：
+                        1.要读取样式的对象
+                        2.要获取的伪元素
+                    -返回值：
+                        返回的一个对象，对象中存储了当前元素的样式
+
+                    -注意：
+                        样式对象中返回的样式值，不一定能直接拿来计算
+                            所以使用时，一定要确保值是可以计算的才去计算
+            */
+            const styleObj = getComputedStyle(box1)
+            console.log(styleObj.width);
+            console.log(parseInt(styleObj.width) + 100);
+        }
+    </script>
+</body>
+</html>

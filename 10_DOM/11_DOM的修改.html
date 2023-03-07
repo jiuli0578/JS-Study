@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            //获取按钮
+            const btn1 = document.getElementById("btn1")
+            const btn2 = document.getElementById("btn2")
+            const btn3 = document.getElementById("btn3")
+
+            //获取ul
+            const list = document.getElementById("list")
+
+            btn1.onclick = function(){
+                const li = document.createElement("li")
+                //向li中添加文本
+                li.textContent = "唐僧"
+                //向li中添加id
+                li.id = "ts"
+                //appendChild() 用来给一个节点添加子节点
+                //list.appendChild(li)
+
+                /* 
+                    insertAdjacentElement() 可以向元素的任意位置添加元素
+                        -参数： 1.要添加的位置
+                                    afterbegin 标签的开始       beforebegin 在元素的前面插入元素（兄弟元素） 
+                                    beforeend  标签的末尾       afterend    在元素的后面插入元素（兄弟元素）
+                                2.要添加的元素
+                */
+                //list.insertAdjacentElement("beforeend",li)
+
+                /* 
+                    insertAdjacentHTML() 可以向元素的任意位置添加内容
+                        -参数： 1.要添加的位置
+                                    afterbegin 标签的开始       beforebegin 在元素的前面插入内容（兄弟内容） 
+                                    beforeend  标签的末尾       afterend    在元素的后面插入内容（兄弟内容）
+                                2.要添加的内容
+                
+                */
+                list.insertAdjacentHTML("beforeend","<li id='bgj'>白骨精</li>")
+            }
+
+            btn2.onclick = function(){
+                //创建唐僧替换孙悟空
+                const li = document.createElement("li")
+                //向li中添加文本
+                li.textContent = "唐僧"
+                //向li中添加id
+                li.id = "ts"
+                
+                //获取孙悟空
+                const swk = document.getElementById("swk")
+                //replaceWith() 使用一个元素来替换当前元素
+                swk.replaceWith(li)
+            }
+            
+            btn3.onclick = function(){
+               
+                //获取孙悟空
+                const swk = document.getElementById("swk")
+                //remove() 用来删除当前元素
+                swk.remove()
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">添加</button>
+    <button id="btn2">修改</button>
+    <button id="btn3">删除</button>
+    <hr>
+    <ul id="list">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+        <li id="shs">沙和尚</li>
+    </ul>
+</body>
+</html>

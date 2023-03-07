@@ -25,7 +25,7 @@
                         删除：元素.removeAttribute(属性名)
         */
         //const input = document.getElementsByName('username')
-        const input = document.querySelector('[name = username]')
+        const input = document.querySelector('[name = username]')//等价于getElementsByName，获取对象
         let result = input.value    //admin
         result = input.value = '孙悟空' //孙悟空
         result = input.disabled     //false     disabled 表示不可写
