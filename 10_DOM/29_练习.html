@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 1920px;
+            margin: auto;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .p{
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /* 
+                点击切换图片
+            */
+            //获取图片
+            const img = document.getElementsByTagName('img')[0]
+            //获取按钮
+            const prev = document.getElementById('prev')
+            const next = document.getElementById('next')
+            //获取p
+            const p = document.getElementById("p")
+            const imgArr = [
+                "images/1.png",
+                "images/2.png",
+                "images/3.png",
+                "images/4.png",
+                "images/5.png",
+                
+            ]
+            
+            let num = 0
+            p.textContent = `总共${imgArr.length}张图片，目前为第${num + 1}张`
+            
+            //图片自动切换
+            setTimeout(function fn(){
+                num++
+                if(num > imgArr.length - 1){
+                    num = 0
+                }
+                img.src = imgArr[num]
+                p.textContent = `总共${imgArr.length}张图片，目前为第${num + 1}张`
+                setTimeout(fn,3000)
+            },3000)
+            
+            prev.onclick = function(){
+                num--
+                if(num < 0){
+                    num = imgArr.length - 1
+                }
+                img.src = imgArr[num]
+                p.textContent = `总共${imgArr.length}张图片，目前为第${num + 1}张`
+            }
+            next.onclick = function(){
+                num++
+                if(num > imgArr.length - 1){
+                    num = 0
+                }
+                img.src = imgArr[num]
+                p.textContent = `总共${imgArr.length}张图片，目前为第${num + 1}张`
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1 id="p" class="p">总共n张图片，目前为第m张</h1>
+    <div class="outer">
+        <div class="img-warpper">
+            <img src="images/1.png" alt="这是一张图片">
+        </div>
+        <div class="btn-warpper">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+    </div>
+</body>
+</html>
