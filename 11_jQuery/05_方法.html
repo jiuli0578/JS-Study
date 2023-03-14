@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts/jquery-3.6.1.js"></script>
+    <script>
+        /* 
+            clone()用来复制jQuery对象
+                -括号里传true表示不仅复制对象本身，包括对象方法，数据等都复制
+            unwrap() 删除当前元素的外层父元素
+            wrap() 为当前元素添加一个容器（父元素）
+            wrapAll() 为当前的所有同种元素统一添加一个容器（父元素）
+            wrapInner() 为当前元素添加一个内部容器
+        */
+        $(function(){
+            $("#swk").click(function(){
+                alert("孙悟空")
+            })
+            var $swk = $("#list1 li:nth-child(1)").clone(true)
+            var $list2 = $("#list2")
+            $("#btn").click(function(){
+                // $list2.append($swk)
+                // $("#list1 li").unwrap()
+                // $("#list1 li").wrap("<div/>")
+                // $("#list1 li").wrapAll("<div/>")
+                $("#list1 li").wrapInner("<DIV/>")
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <ul id="list1">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+    </ul>
+    <ul id="list2">
+        <li id="shs">沙和尚</li>
+        <li id="ts">唐僧</li>
+    </ul>
+</body>
+</html>

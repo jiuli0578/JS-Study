@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts/jquery-3.6.1.js"></script>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .box2{
+            border: 5px solid rgb(255, 38, 0);
+
+        }
+        .box3{
+            background-color: chartreuse;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                //为box1添加class
+                /* 
+                    addClass()可以为元素添加一个或多个class
+                    addClass()可以接收一个回调函数作为参数
+                */
+                // $(".box1").addClass("box2")
+                // $(".box1").addClass(["box2","box3"])
+                $(".box1").addClass(function(index,className){
+                    //在回调函数中，this表示的是当前的元素
+                    if(index % 2 === 0){
+                        $(this).addClass("box2")
+                    }else{
+                        $(this).addClass("box3")
+                    }
+                })
+                //两种方法等价，但下面的更简单
+                $(".box1").addClass(function(index){
+                    if(index % 2 === 0){
+                        return "box2"
+                    }else{
+                        return "box3"
+                    }
+                })
+            }) 
+        })
+        
+    </script>
+        
+    
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <hr>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+</body>
+</html>

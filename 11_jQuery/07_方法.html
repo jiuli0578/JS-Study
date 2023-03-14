@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts/jquery-3.6.1.js"></script>
+    <script>
+        /* 
+            empty() 删除所有子元素
+            remove() 移除元素（会移除事件等）
+            detach() 移除元素（不会移除事件等）
+
+            attr() 读取布尔值返回实际值
+            prop() 读取布尔值返回 true/false
+                -用来读取或设置元素的属性
+                -读取布尔值属性时两者不会返回不同的值
+        */
+        
+        $(function(){
+            var $li = $("li:nth-child(1)")
+            $li.click(function(){
+                alert("哈哈哈")
+            })
+            $("#btn1").click(function(){
+                // $("ul").empty()
+                // $li.remove()
+                $li.detach()
+            })
+            $("#btn2").click(function(){
+                $("ul").append($li)
+            })
+            $("#btn3").click(function(){
+                var type = $("input[typr=text]").attr("type")
+                var name = $("input[typr=text]").prop("name")
+                var checked = $("input[typr=radio]").prop("checked")
+                alert(checked)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn1">删除</button>
+    <button id="btn2">恢复</button>
+    <hr>
+    <ul>
+        <li>孙悟空</li>
+        <li>沙和尚</li>
+        <li>猪八戒</li>
+    </ul>
+    <hr>
+    <input type="radio" name="gender" value="man" checked>男
+    <input type="radio" name="gender" value="woman">女
+    <hr>
+    <input type="text">
+    <hr>
+    <button id="btn3">点我一下</button>
+
+</body>
+</html>
