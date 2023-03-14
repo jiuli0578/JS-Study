@@ -54,14 +54,14 @@
                 在事件的响应函数中，event.target 表示的是触发事件的对象
                     this 表示的是绑定事件的对象
             */
-            alert("我是box1" + event.eventPhase)    //event.eventPhase 表示事件触发的阶段
+            alert("我是box1 " + event.eventPhase)    //event.eventPhase 表示事件触发的阶段
                                                     //1.捕获阶段 2.目标阶段 3.冒泡阶段
         },true)
         box2.addEventListener("click",function(event){
-            alert("我是box2" + event.eventPhase)
+            alert("我是box2 " + event.eventPhase)
         },true)
         box3.addEventListener("click",function(event){
-            alert("我是box3" + event.eventPhase)
+            alert("我是box3 " + event.eventPhase)
         },true)
     </script>
 </body>

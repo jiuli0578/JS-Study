@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const arr = ['孙悟空','猪八戒','沙和尚','唐僧']
+        const arr = ['孙悟空','猪八戒','沙和尚','唐僧','沙和尚']
         /* 
             indexOf()
                 -获取元素在数组中第一次出现的索引
@@ -48,9 +48,9 @@
                     如果将两个参数全部省略，则可以对数组进行浅拷贝（浅复制）
         */
         console.log(arr.slice(0,2));  //['孙悟空', '猪八戒']
-        console.log(arr.slice(2));  //['沙和尚', '唐僧']
-        console.log(arr.slice(2,-1));  //['沙和尚']
-        console.log(arr.slice());  //['孙悟空', '猪八戒', '沙和尚', '唐僧']
+        console.log(arr.slice(2));  //['沙和尚', '唐僧','沙和尚']
+        console.log(arr.slice(2,-1));  //['沙和尚', '唐僧']
+        console.log(arr.slice());  //['孙悟空', '猪八戒', '沙和尚', '唐僧','沙和尚']
     </script>
 </head>
 <body>
